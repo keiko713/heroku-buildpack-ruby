@@ -526,7 +526,9 @@ WARNING
           puts "Running: #{bundle_command}"
           puts "=========="
           puts "#{env_vars} #{bundle_command}"
-          run "#{env_vars} #{bundle_command}"
+          puts "=========="
+          run "which bundle"
+          puts "=========="
           instrument "ruby.bundle_install" do
             bundle_time = Benchmark.realtime do
               bundler_output << pipe("#{env_vars} #{bundle_command} --no-clean 2>&1")
