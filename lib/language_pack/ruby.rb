@@ -527,7 +527,7 @@ WARNING
           puts "=========="
           puts "#{env_vars} #{bundle_command}"
           puts "=========="
-          run "which bundle"
+          system "which bundle"
           puts "=========="
           instrument "ruby.bundle_install" do
             bundle_time = Benchmark.realtime do
