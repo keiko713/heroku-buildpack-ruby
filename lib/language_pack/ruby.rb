@@ -528,6 +528,12 @@ WARNING
           puts "#{env_vars} #{bundle_command}"
           puts "=========="
           system "which bundle"
+          bundler_path   = "#{pwd}/#{slug_vendor_base}/gems/#{BUNDLER_GEM_PATH}/lib"
+          puts "=========="
+          puts "#{bundler_path}"
+          system "ls -la #{bundler_path}"
+          puts "=========="
+          system "ls -la #{pwd}/#{slug_vendor_base}/vendor/bundle/ruby/2.1.0/bin"
           puts "=========="
           instrument "ruby.bundle_install" do
             bundle_time = Benchmark.realtime do
